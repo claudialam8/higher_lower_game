@@ -43,14 +43,16 @@ person_b = get_instagram_acc_next()
 # exit when response is wrong
 while continue_game:
     print_instagram_acc(person_a, person_b)
+    person_a_follower = person_a["follower_count"]
+    person_b_follower = person_b["follower_count"]
 
     response = input("Who has more followers? Type 'A' or 'B': ").lower()
 
     # Check response and calculate score
-    if response == 'a' and person_a["follower_count"] > person_b["follower_count"]:
+    if response == 'a' and person_a_follower > person_b_follower:
         score += 1
         print(f"You are right, A has more. Current score: {score}")
-    elif response == 'b' and person_b["follower_count"] > person_a["follower_count"]:
+    elif response == 'b' and person_b_follower > person_a_follower:
         score += 1
         print(f"You are right, A has more. Current score: {score}")
     else:
